@@ -17,6 +17,7 @@
 		F5992F2229A3D698004C9FAE /* MusicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2129A3D698004C9FAE /* MusicsViewController.swift */; };
 		F5992F2429A3D6A5004C9FAE /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2329A3D6A5004C9FAE /* BooksViewController.swift */; };
 		F5992F2629A3D6C9004C9FAE /* AudiobooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2529A3D6C9004C9FAE /* AudiobooksViewController.swift */; };
+		F5992F2829A3DFA9004C9FAE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2729A3DFA9004C9FAE /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F5992F2129A3D698004C9FAE /* MusicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicsViewController.swift; sourceTree = "<group>"; };
 		F5992F2329A3D6A5004C9FAE /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		F5992F2529A3D6C9004C9FAE /* AudiobooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobooksViewController.swift; sourceTree = "<group>"; };
+		F5992F2729A3DFA9004C9FAE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +68,15 @@
 			children = (
 				F52BF9D029A3D37A00B59AC7 /* AppDelegate.swift */,
 				F52BF9D229A3D37A00B59AC7 /* SceneDelegate.swift */,
-				F52BF9D629A3D37A00B59AC7 /* Main.storyboard */,
 				F5992F2129A3D698004C9FAE /* MusicsViewController.swift */,
 				F5992F1D29A3D631004C9FAE /* PodcastsViewController.swift */,
 				F5992F1F29A3D645004C9FAE /* AppsViewController.swift */,
 				F5992F2329A3D6A5004C9FAE /* BooksViewController.swift */,
 				F5992F2529A3D6C9004C9FAE /* AudiobooksViewController.swift */,
-				F52BF9D929A3D37C00B59AC7 /* Assets.xcassets */,
+				F5992F2729A3DFA9004C9FAE /* DataModel.swift */,
+				F52BF9D629A3D37A00B59AC7 /* Main.storyboard */,
 				F52BF9DB29A3D37C00B59AC7 /* LaunchScreen.storyboard */,
+				F52BF9D929A3D37C00B59AC7 /* Assets.xcassets */,
 				F52BF9DE29A3D37C00B59AC7 /* Info.plist */,
 			);
 			path = "HotList-iOS";
@@ -155,6 +158,7 @@
 				F5992F2229A3D698004C9FAE /* MusicsViewController.swift in Sources */,
 				F52BF9D129A3D37A00B59AC7 /* AppDelegate.swift in Sources */,
 				F52BF9D329A3D37A00B59AC7 /* SceneDelegate.swift in Sources */,
+				F5992F2829A3DFA9004C9FAE /* DataModel.swift in Sources */,
 				F5992F1E29A3D631004C9FAE /* PodcastsViewController.swift in Sources */,
 				F5992F2429A3D6A5004C9FAE /* BooksViewController.swift in Sources */,
 			);
