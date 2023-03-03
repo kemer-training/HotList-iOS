@@ -30,17 +30,35 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wml-Nz-xRf">
+                                <rect key="frame" x="0.0" y="78" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="3dC-cS-4r1">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bGc-eC-NoO">
+                                            <rect key="frame" x="16" y="5.5" width="288" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Podcast Episodes"/>
+                                                <segment title="Podcast"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mbe-cj-WNO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fhf-Ma-AUC"/>
+                            <constraint firstItem="wml-Nz-xRf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ISH-3T-uxo"/>
                             <constraint firstAttribute="bottom" secondItem="mbe-cj-WNO" secondAttribute="bottom" id="SBP-V6-Nrg"/>
                             <constraint firstItem="mbe-cj-WNO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WNl-d7-yLL"/>
+                            <constraint firstItem="wml-Nz-xRf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lYJ-h2-ERp"/>
                             <constraint firstItem="mbe-cj-WNO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nU2-u8-M9j"/>
+                            <constraint firstItem="wml-Nz-xRf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rJ8-ff-tD4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ikc-1i-geB"/>
+                    <navigationItem key="navigationItem" prompt=" " id="ikc-1i-geB"/>
                     <connections>
                         <outlet property="tableView" destination="mbe-cj-WNO" id="R6R-mL-YEf"/>
                     </connections>
@@ -100,7 +118,7 @@
                             <constraint firstItem="ke0-Xp-46W" firstAttribute="top" secondItem="FNg-xq-Avv" secondAttribute="top" id="gnK-qh-wzz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="le2-Dp-UwX"/>
+                    <navigationItem key="navigationItem" prompt=" " id="le2-Dp-UwX"/>
                     <connections>
                         <outlet property="tableView" destination="ke0-Xp-46W" id="5ol-lb-Y1g"/>
                     </connections>
@@ -150,17 +168,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WU-NF-bab">
+                                <rect key="frame" x="0.0" y="78" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="eEO-nH-uWG">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uGW-VI-JRH">
+                                            <rect key="frame" x="16" y="5.5" width="288" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Albums"/>
+                                                <segment title="Music Videos"/>
+                                                <segment title="Playlists"/>
+                                                <segment title="Songs"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DMe-a7-QZ7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1WU-NF-bab" firstAttribute="trailing" secondItem="DMe-a7-QZ7" secondAttribute="trailing" id="2h0-BU-Rpc"/>
+                            <constraint firstItem="1WU-NF-bab" firstAttribute="leading" secondItem="DMe-a7-QZ7" secondAttribute="leading" id="7BQ-XM-1Cj"/>
                             <constraint firstItem="4CD-sx-fOQ" firstAttribute="trailing" secondItem="DMe-a7-QZ7" secondAttribute="trailing" id="F9J-mU-JRE"/>
                             <constraint firstItem="4CD-sx-fOQ" firstAttribute="top" secondItem="BnX-BB-veb" secondAttribute="top" id="brj-IF-85Z"/>
                             <constraint firstItem="4CD-sx-fOQ" firstAttribute="leading" secondItem="DMe-a7-QZ7" secondAttribute="leading" id="bua-0a-9pw"/>
                             <constraint firstAttribute="bottom" secondItem="4CD-sx-fOQ" secondAttribute="bottom" id="mRz-gj-wt6"/>
+                            <constraint firstItem="1WU-NF-bab" firstAttribute="top" secondItem="DMe-a7-QZ7" secondAttribute="top" id="zF9-DW-qdJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZMk-92-pF0"/>
+                    <navigationItem key="navigationItem" prompt=" " id="ZMk-92-pF0"/>
                     <connections>
                         <outlet property="tableView" destination="4CD-sx-fOQ" id="WAQ-ae-Jjc"/>
                     </connections>
@@ -220,7 +258,7 @@
                             <constraint firstItem="7kg-y1-eWR" firstAttribute="trailing" secondItem="A52-50-Q6g" secondAttribute="trailing" id="xWS-JC-mV8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wmp-Yr-gQk"/>
+                    <navigationItem key="navigationItem" prompt=" " id="wmp-Yr-gQk"/>
                     <connections>
                         <outlet property="tableView" destination="7kg-y1-eWR" id="tp8-V5-Qnj"/>
                     </connections>
@@ -280,7 +318,7 @@
                             <constraint firstItem="A7P-oB-sZB" firstAttribute="trailing" secondItem="AZE-hY-ipY" secondAttribute="trailing" id="xjl-7T-NDO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yRJ-Y3-Lka"/>
+                    <navigationItem key="navigationItem" prompt=" " id="yRJ-Y3-Lka"/>
                     <connections>
                         <outlet property="tableView" destination="A7P-oB-sZB" id="dAs-W4-jcr"/>
                     </connections>

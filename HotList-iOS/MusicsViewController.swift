@@ -16,6 +16,7 @@ class MusicsViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.title = "Music"
+        tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         
     }
     
