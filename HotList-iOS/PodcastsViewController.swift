@@ -16,6 +16,9 @@ class PodcastsViewController: UIViewController{
         tableView.dataSource = self
         navigationItem.title = "Podcasts"
         tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
+        
+        let cellNib = UINib(nibName: "HotListCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
     }
 }
 
@@ -25,6 +28,6 @@ extension PodcastsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return data.putDummyCells(on: tableView, onCell: "PodcastCell")
+        return data.putDummyCells(on: tableView)
     }
 }

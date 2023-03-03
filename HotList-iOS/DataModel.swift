@@ -7,9 +7,11 @@
 
 import UIKit
 class DataModel{
-    func putDummyCells(on tableView: UITableView, onCell id: String) -> UITableViewCell{
+    func putDummyCells(on tableView: UITableView) -> UITableViewCell{
+        var id = "HotListCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: id)
-        cell?.textLabel?.text = "Dummy Cell"
+//        cell?.textLabel?.text = "Dummy Cell"
+        
         return cell!
     }
     

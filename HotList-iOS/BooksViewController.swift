@@ -15,6 +15,9 @@ class BooksViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.title = "Books"
+        
+        let cellNib = UINib(nibName: "HotListCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
     }
 }
 
@@ -24,6 +27,6 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return data.putDummyCells(on: tableView, onCell: "BookCell")
+        return data.putDummyCells(on: tableView)
     }
 }

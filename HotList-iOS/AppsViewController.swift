@@ -15,6 +15,9 @@ class AppsViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.title = "Apps"
+        
+        let cellNib = UINib(nibName: "HotListCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
     }
 }
 
@@ -24,6 +27,6 @@ extension AppsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return data.putDummyCells(on: tableView, onCell: "AppCell")
+        return data.putDummyCells(on: tableView)
     }
 }

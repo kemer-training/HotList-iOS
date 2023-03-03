@@ -15,6 +15,9 @@ class AudiobooksViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.title = "Audio Books"
+        
+        let cellNib = UINib(nibName: "HotListCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
     }
 }
 
@@ -24,6 +27,6 @@ extension AudiobooksViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        return data.putDummyCells(on: tableView, onCell: "AudiobookCell")
+        return data.putDummyCells(on: tableView)
     }
 }
