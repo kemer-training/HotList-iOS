@@ -19,7 +19,7 @@
                         <rect key="frame" x="15" y="0.0" width="363" height="80"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-gG-XVp">
-                                <rect key="frame" x="0.0" y="6" width="70" height="68.666666666666657"/>
+                                <rect key="frame" x="0.0" y="6" width="70" height="68.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="36f-dP-LfX"/>
                                     <constraint firstAttribute="height" constant="70" id="PZ4-ey-0tH"/>
@@ -53,6 +53,11 @@
                     <constraint firstItem="Imh-Bd-ipU" firstAttribute="top" secondItem="qzz-I5-9C0" secondAttribute="top" id="uwS-gj-zOg"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="artistName" destination="tSk-8O-xui" id="fbD-Ma-nUa"/>
+                <outlet property="artworkView" destination="L0g-gG-XVp" id="MTJ-fH-Jpo"/>
+                <outlet property="name" destination="scG-0x-hSQ" id="MOn-bn-hJn"/>
+            </connections>
             <point key="canvasLocation" x="223.66412213740458" y="0.70422535211267612"/>
         </tableViewCell>
     </objects>

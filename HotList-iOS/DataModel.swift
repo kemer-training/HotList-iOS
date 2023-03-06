@@ -5,16 +5,18 @@
 //  Created by NAHØM on 20/02/2023.
 //
 
-import UIKit
+import Foundation
+
 class DataModel{
-    func putDummyCells(on tableView: UITableView) -> UITableViewCell{
-        var id = "HotListCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: id)
-//        cell?.textLabel?.text = "Dummy Cell"
-        
-        return cell!
-    }
-    
+    var feed: Feed?
 }
 
-var data = DataModel()
+class Feed{
+    var results: [Result] = []
+}
+
+class Result{
+    var name: String?
+    var artistName: String?
+    var artworkUrl100: String?
+}
