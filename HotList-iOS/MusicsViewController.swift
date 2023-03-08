@@ -32,7 +32,7 @@ extension MusicsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return data.putDummyCells(on: tableView)
+        return DataLoader.loadData(on: tableView)
     }
     
 }
