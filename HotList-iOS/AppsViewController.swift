@@ -26,7 +26,7 @@ class AppsViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
-        dataLoader.loadData(on: tableView){
+        dataLoader.loadData(mediaType: "apps/top-free", type: "apps", on: tableView){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }

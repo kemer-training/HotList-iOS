@@ -10,14 +10,15 @@ import UIKit
 class DataLoader{
     var apiData: DataModel?
     var isLoading = true
-    func getUrl() -> URL?{
-        return URL(string: "https://rss.applemarketingtools.com/api/v2/us/music/most-played/10/albums.json")
+    
+    func getUrl(for mediaType: String, and type: String) -> URL?{
+        return URL(string: "https://rss.applemarketingtools.com/api/v2/us/\(mediaType)/10/\(type).json"
+        )
     }
     
-    func loadData(on tableView: UITableView,  completion: @escaping () -> ()){
+    func loadData(mediaType: String, type: String, on tableView: UITableView,  completion: @escaping () -> ()){
         
-        let url = getUrl()
-        
+        let url = getUrl(for: mediaType, and: type)
         
         let session = URLSession.shared
         let task = session.dataTask(with: url!) { data, response, error in
@@ -58,6 +59,7 @@ class DataLoader{
         spinner?.startAnimating()
         return cell
     }
+    
     func displayData(_ data: Result, on tableView: UITableView) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
         cell.name.text = data.name

@@ -29,7 +29,7 @@ class PodcastsViewController: UIViewController{
         
         
         
-        dataLoader.loadData(on: tableView){
+        dataLoader.loadData(mediaType: "podcasts/top", type: "podcasts", on: tableView){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }

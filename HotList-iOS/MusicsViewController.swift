@@ -28,7 +28,7 @@ class MusicsViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
-        dataLoader.loadData(on: tableView){
+        dataLoader.loadData(mediaType: "music/most-played", type: "albums", on: tableView){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }
@@ -46,7 +46,6 @@ extension MusicsViewController: UITableViewDelegate, UITableViewDataSource{
         if dataLoader.isLoading{
             return dataLoader.displayLoading(on: tableView)
         }
-        
         return dataLoader.displayData(data[indexPath.row], on: tableView)
     }
     
