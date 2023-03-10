@@ -20,11 +20,14 @@ class MusicsViewController: UIViewController{
         navigationItem.title = "Music"
         tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         
-        let cellNib = UINib(nibName: "HotListCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
+        let cell = UINib(nibName: "HotListCell", bundle: nil)
+        tableView.register(cell, forCellReuseIdentifier: "HotListCell")
+        
+        let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
+        tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
         DataLoader.loadData(on: tableView){
-            self.data = DataLoader.myData?.feed?.results ?? []
+            self.data = DataLoader.apiData?.feed?.results ?? []
             
         }
     }
@@ -34,13 +37,26 @@ class MusicsViewController: UIViewController{
 
 extension MusicsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return DataLoader.isLoading ? 1 : data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
-        cell.name.text = data[indexPath.row].name
-        cell.artistName.text = data[indexPath.row].artistName
-        return cell
+        var spinner: UIActivityIndicatorView?
+        if DataLoader.isLoading{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell")!
+            spinner = cell.viewWithTag(2000) as? UIActivityIndicatorView
+            spinner?.startAnimating()
+            return cell
+        }
+        else{
+            spinner?.stopAnimating()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
+            cell.name.text = data[indexPath.row].name
+            cell.artistName.text = data[indexPath.row].artistName
+            return cell
+        }
+        
+        
     }
     
 }

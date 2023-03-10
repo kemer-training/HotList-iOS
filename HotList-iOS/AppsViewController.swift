@@ -22,7 +22,7 @@ class AppsViewController: UIViewController{
         tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
         
         DataLoader.loadData(on: tableView){
-            self.data = DataLoader.myData?.feed?.results ?? []
+            self.data = DataLoader.apiData?.feed?.results ?? []
             
         }
     }
