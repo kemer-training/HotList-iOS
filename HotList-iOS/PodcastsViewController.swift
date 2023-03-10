@@ -11,6 +11,8 @@ class PodcastsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     
     var data: [Result] = []
+    var dataLoader = DataLoader()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,11 +21,16 @@ class PodcastsViewController: UIViewController{
         navigationItem.title = "Podcasts"
         tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         
-        let cellNib = UINib(nibName: "HotListCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
+        let cell = UINib(nibName: "HotListCell", bundle: nil)
+        tableView.register(cell, forCellReuseIdentifier: "HotListCell")
         
-        DataLoader.loadData(on: tableView){
-            self.data = DataLoader.apiData?.feed?.results ?? []
+        let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
+        tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
+        
+        
+        
+        dataLoader.loadData(on: tableView){
+            self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }
     }
@@ -31,13 +38,14 @@ class PodcastsViewController: UIViewController{
 
 extension PodcastsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return dataLoader.isLoading ? 1 : data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
-        cell.name.text = data[indexPath.row].name
-        cell.artistName.text = data[indexPath.row].artistName
-        return cell
+        if dataLoader.isLoading{
+            return dataLoader.displayLoading(on: tableView)
+        }
+        
+        return dataLoader.displayData(data[indexPath.row], on: tableView)
     }
 }

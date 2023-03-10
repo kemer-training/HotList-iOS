@@ -8,13 +8,13 @@
 import UIKit
 
 class DataLoader{
-    static var apiData: DataModel?
-    static var isLoading = true
-    static func getUrl() -> URL?{
+    var apiData: DataModel?
+    var isLoading = true
+    func getUrl() -> URL?{
         return URL(string: "https://rss.applemarketingtools.com/api/v2/us/music/most-played/10/albums.json")
     }
     
-    static func loadData(on tableView: UITableView,  completion: @escaping () -> ()){
+    func loadData(on tableView: UITableView,  completion: @escaping () -> ()){
         
         let url = getUrl()
         
@@ -28,20 +28,19 @@ class DataLoader{
                 print("Response Code - \(response.statusCode)")
             }
             else{
-                apiData = decodeData(from: data)
-                isLoading = false
+                self.apiData = self.decodeData(from: data)
+                self.isLoading = false
                 DispatchQueue.main.async {
                     completion()
                     tableView.reloadData()
                 }
             }
         }
-        
         task.resume()
         
     }
     
-    static func decodeData(from data: Data?) -> DataModel?{
+    func decodeData(from data: Data?) -> DataModel?{
         let decoder = JSONDecoder()
         do{
             let apiData = try decoder.decode(DataModel.self, from: data!)
@@ -50,6 +49,20 @@ class DataLoader{
             print(error.localizedDescription)
         }
         return nil
+    }
+    
+    func displayLoading(on tableView: UITableView) -> UITableViewCell{
+        var spinner: UIActivityIndicatorView?
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell")!
+        spinner = cell.viewWithTag(2000) as? UIActivityIndicatorView
+        spinner?.startAnimating()
+        return cell
+    }
+    func displayData(_ data: Result, on tableView: UITableView) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
+        cell.name.text = data.name
+        cell.artistName.text = data.artistName
+        return cell
     }
 }
 
