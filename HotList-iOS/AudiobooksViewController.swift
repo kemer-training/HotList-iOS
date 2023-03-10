@@ -9,6 +9,8 @@ import UIKit
 
 class AudiobooksViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
+    
+    var data: [Result] = []
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -18,15 +20,23 @@ class AudiobooksViewController: UIViewController{
         
         let cellNib = UINib(nibName: "HotListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "HotListCell")
+        
+        DataLoader.loadData(on: tableView){
+            self.data = DataLoader.myData?.feed?.results ?? []
+            
+        }
     }
 }
 
 extension AudiobooksViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        return DataLoader.loadData(on: tableView)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
+        cell.name.text = data[indexPath.row].name
+        cell.artistName.text = data[indexPath.row].artistName
+        return cell
     }
 }
