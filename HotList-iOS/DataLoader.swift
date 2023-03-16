@@ -64,7 +64,38 @@ class DataLoader{
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
         cell.name.text = data.name
         cell.artistName.text = data.artistName
+        cell.artworkView.loadImage(from: data.artworkUrl100!)
+//        tableView.reloadData()
         return cell
     }
 }
 
+extension UIImageView{
+    func loadImage(from urlString: String){
+        let url = URL(string: urlString)
+        let session = URLSession.shared
+        
+        let downloadTask = session.downloadTask(with: url!) { url, response, error in
+            if let error = error{
+                print(error.localizedDescription)
+            }
+            else if let response = response as? HTTPURLResponse, response.statusCode != 200{
+                print("Response Code = \(response.statusCode)")
+            }
+            else if let url = url{
+                do{
+                    let data = try Data(contentsOf: url)
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        self.image = image
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+                
+                
+            }
+        }
+        downloadTask.resume()
+    }
+}
