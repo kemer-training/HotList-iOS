@@ -18,6 +18,7 @@ class HotListTableViewCell: UITableViewCell {
         artworkView.layer.cornerRadius = 35
         artworkView.layer.borderWidth = 1
         artworkView.layer.borderColor = CGColor(red: 255, green: 0, blue: 0, alpha: 1)
+        separatorInset.left = 100
         
     }
 
