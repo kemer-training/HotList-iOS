@@ -18,16 +18,15 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Imh-Bd-ipU">
                         <rect key="frame" x="15" y="0.0" width="363" height="80"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-gG-XVp">
-                                <rect key="frame" x="0.0" y="6" width="70" height="68.666666666666671"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-gG-XVp">
+                                <rect key="frame" x="0.0" y="7" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="36f-dP-LfX"/>
                                     <constraint firstAttribute="height" constant="70" id="PZ4-ey-0tH"/>
                                 </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yCP-bP-L2z">
-                                <rect key="frame" x="85" y="21.000000000000004" width="278" height="38.333333333333343"/>
+                                <rect key="frame" x="85" y="23.000000000000004" width="278" height="38.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scG-0x-hSQ">
                                         <rect key="frame" x="0.0" y="0.0" width="278" height="20.333333333333332"/>
@@ -44,6 +43,10 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="L0g-gG-XVp" secondAttribute="bottom" constant="3" id="i6o-py-3Df"/>
+                            <constraint firstItem="L0g-gG-XVp" firstAttribute="top" secondItem="Imh-Bd-ipU" secondAttribute="top" constant="7" id="pwC-dv-C5E"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -61,7 +64,4 @@
             <point key="canvasLocation" x="223.66412213740458" y="0.70422535211267612"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="circle" catalog="system" width="128" height="123"/>
-    </resources>
 </document>

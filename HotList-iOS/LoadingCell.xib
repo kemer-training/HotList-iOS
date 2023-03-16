@@ -31,11 +31,13 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nF7-DQ-Pnu" firstAttribute="centerY" secondItem="yJe-Kp-Ia4" secondAttribute="centerY" id="4Zq-3P-hpQ"/>
-                    <constraint firstItem="nF7-DQ-Pnu" firstAttribute="centerX" secondItem="yJe-Kp-Ia4" secondAttribute="centerX" id="PVK-qF-fGB"/>
+                    <constraint firstAttribute="bottom" secondItem="nF7-DQ-Pnu" secondAttribute="bottom" constant="30" id="Grs-aL-giS"/>
+                    <constraint firstItem="nF7-DQ-Pnu" firstAttribute="centerX" secondItem="yJe-Kp-Ia4" secondAttribute="centerX" id="Neb-8C-FVj"/>
+                    <constraint firstItem="nF7-DQ-Pnu" firstAttribute="top" secondItem="yJe-Kp-Ia4" secondAttribute="top" constant="30" id="Ylh-wz-1jl"/>
+                    <constraint firstItem="nF7-DQ-Pnu" firstAttribute="centerY" secondItem="yJe-Kp-Ia4" secondAttribute="centerY" id="k9Y-bp-vFg"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="95" y="20"/>
+            <point key="canvasLocation" x="93.89312977099236" y="19.718309859154932"/>
         </tableViewCell>
     </objects>
 </document>

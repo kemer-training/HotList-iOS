@@ -31,7 +31,11 @@ class PodcastsViewController: UIViewController{
         
         
         
-        dataLoader.loadData(mediaType: "podcasts/top", type: PodcastType[0], on: tableView){
+        dataLoader.loadData(
+            mediaType: "podcasts/top",
+            type: PodcastType[0],
+            on: tableView
+        ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }
@@ -41,7 +45,11 @@ class PodcastsViewController: UIViewController{
         dataLoader.isLoading = true
         tableView.reloadData()
         
-        dataLoader.loadData(mediaType: "podcasts/top", type: PodcastType[sender.selectedSegmentIndex], on: tableView){
+        dataLoader.loadData(
+            mediaType: "podcasts/top",
+            type: PodcastType[sender.selectedSegmentIndex],
+            on: tableView
+        ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
         }
     }

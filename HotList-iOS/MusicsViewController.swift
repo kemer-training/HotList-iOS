@@ -31,7 +31,11 @@ class MusicsViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
-        dataLoader.loadData(mediaType: "music/most-played", type: MusicType[0], on: tableView){
+        dataLoader.loadData(
+            mediaType: "music/most-played",
+            type: MusicType[0],
+            on: tableView
+        ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }
@@ -41,7 +45,11 @@ class MusicsViewController: UIViewController{
         dataLoader.isLoading = true
         tableView.reloadData()
         
-        dataLoader.loadData(mediaType: "music/most-played", type: MusicType[sender.selectedSegmentIndex], on: tableView){
+        dataLoader.loadData(
+            mediaType: "music/most-played",
+            type: MusicType[sender.selectedSegmentIndex],
+            on: tableView
+        ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
         }
     }

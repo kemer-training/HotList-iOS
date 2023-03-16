@@ -26,7 +26,11 @@ class BooksViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
-        dataLoader.loadData(mediaType: "books/top-free", type: "books", on: tableView){
+        dataLoader.loadData(
+            mediaType: "books/top-free",
+            type: "books",
+            on: tableView
+        ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }

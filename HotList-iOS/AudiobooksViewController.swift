@@ -26,7 +26,11 @@ class AudiobooksViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
-        dataLoader.loadData(mediaType: "audio-books/top", type: "audio-books", on: tableView){
+        dataLoader.loadData(
+            mediaType: "audio-books/top",
+            type: "audio-books",
+            on: tableView
+        ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }

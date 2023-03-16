@@ -26,7 +26,7 @@ class DataLoader{
                 print("Error - \(error.localizedDescription)")
             }
             else if let response = response as? HTTPURLResponse, response.statusCode != 200{
-                print("Response Code - \(response.statusCode)")
+                print("\(response.statusCode) - \(response.description)")
             }
             else{
                 self.apiData = self.decodeData(from: data)
@@ -65,7 +65,7 @@ class DataLoader{
         cell.name.text = data.name
         cell.artistName.text = data.artistName
         cell.artworkView.loadImage(from: data.artworkUrl100!)
-//        tableView.reloadData()
+        
         return cell
     }
 }
@@ -80,7 +80,7 @@ extension UIImageView{
                 print(error.localizedDescription)
             }
             else if let response = response as? HTTPURLResponse, response.statusCode != 200{
-                print("Response Code = \(response.statusCode)")
+                print("\(response.statusCode) - \(response.description)")
             }
             else if let url = url{
                 do{
@@ -92,10 +92,9 @@ extension UIImageView{
                 } catch {
                     print(error.localizedDescription)
                 }
-                
-                
             }
         }
+        self.image = nil
         downloadTask.resume()
     }
 }

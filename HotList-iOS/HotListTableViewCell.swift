@@ -15,6 +15,10 @@ class HotListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        artworkView.layer.cornerRadius = 35
+        artworkView.layer.borderWidth = 1
+        artworkView.layer.borderColor = CGColor(red: 255, green: 0, blue: 0, alpha: 1)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
