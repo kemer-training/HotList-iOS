@@ -34,13 +34,16 @@
                                 <rect key="frame" x="0.0" y="78" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="3dC-cS-4r1">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bGc-eC-NoO">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bGc-eC-NoO">
                                             <rect key="frame" x="16" y="5.5" width="288" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Podcast Episodes"/>
                                                 <segment title="Podcast"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentedControlClicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="EqX-8h-FP4"/>
+                                            </connections>
                                         </segmentedControl>
                                     </barButtonItem>
                                 </items>
@@ -134,7 +137,7 @@
                     <tabBarItem key="tabBarItem" title="Apps" image="iphone" catalog="system" id="ViA-Aq-vY9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UvP-0l-qJI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -172,7 +175,7 @@
                                 <rect key="frame" x="0.0" y="78" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="eEO-nH-uWG">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uGW-VI-JRH">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uGW-VI-JRH">
                                             <rect key="frame" x="16" y="5.5" width="288" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -181,6 +184,9 @@
                                                 <segment title="Playlists"/>
                                                 <segment title="Songs"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentedControlClicked:" destination="UKy-RR-99b" eventType="valueChanged" id="lZS-cF-zKt"/>
+                                            </connections>
                                         </segmentedControl>
                                     </barButtonItem>
                                 </items>
@@ -274,7 +280,7 @@
                     <tabBarItem key="tabBarItem" title="Books" image="book" catalog="system" id="4Gj-TU-7Xj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gJx-FJ-8tm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

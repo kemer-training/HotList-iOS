@@ -10,8 +10,10 @@ import UIKit
 class PodcastsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     
+    
     var data: [Result] = []
     var dataLoader = DataLoader()
+    var PodcastType = ["podcast-episodes", "podcasts"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,21 @@ class PodcastsViewController: UIViewController{
         
         
         
-        dataLoader.loadData(mediaType: "podcasts/top", type: "podcasts", on: tableView){
+        dataLoader.loadData(mediaType: "podcasts/top", type: PodcastType[0], on: tableView){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }
     }
+    
+    @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
+        dataLoader.isLoading = true
+        tableView.reloadData()
+        
+        dataLoader.loadData(mediaType: "podcasts/top", type: PodcastType[sender.selectedSegmentIndex], on: tableView){
+            self.data = self.dataLoader.apiData?.feed?.results ?? []
+        }
+    }
+    
 }
 
 extension PodcastsViewController: UITableViewDelegate, UITableViewDataSource{
