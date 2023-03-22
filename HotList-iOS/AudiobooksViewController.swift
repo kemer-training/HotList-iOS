@@ -26,6 +26,7 @@ class AudiobooksViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
+        
         dataLoader.loadData(
             mediaType: "audio-books/top",
             type: "audio-books",
@@ -34,6 +35,27 @@ class AudiobooksViewController: UIViewController{
             self.data = self.dataLoader.apiData?.feed?.results ?? []
             
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !data.isEmpty{
+            return
+        }
+        
+        dataLoader.loadData(
+            mediaType: "books/top-free",
+            type: "books",
+            on: tableView
+        ){
+            self.data = self.dataLoader.apiData?.feed?.results ?? []
+            
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        dataLoader.cancelRequest()
+        super.viewDidDisappear(animated)
     }
 }
 

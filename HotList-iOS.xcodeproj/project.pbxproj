@@ -22,6 +22,7 @@
 		F5992F2429A3D6A5004C9FAE /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2329A3D6A5004C9FAE /* BooksViewController.swift */; };
 		F5992F2629A3D6C9004C9FAE /* AudiobooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2529A3D6C9004C9FAE /* AudiobooksViewController.swift */; };
 		F5992F2829A3DFA9004C9FAE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F2729A3DFA9004C9FAE /* DataModel.swift */; };
+		F5AAEA8529CB3EC100A7D18D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAEA8429CB3EC100A7D18D /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		F5992F2329A3D6A5004C9FAE /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		F5992F2529A3D6C9004C9FAE /* AudiobooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobooksViewController.swift; sourceTree = "<group>"; };
 		F5992F2729A3DFA9004C9FAE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F5AAEA8429CB3EC100A7D18D /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				F52BF9D229A3D37A00B59AC7 /* SceneDelegate.swift */,
 				F5992F2729A3DFA9004C9FAE /* DataModel.swift */,
 				F549459029B62E010091F94A /* DataLoader.swift */,
+				F5AAEA8429CB3EC100A7D18D /* ImageLoader.swift */,
 				F5992F2129A3D698004C9FAE /* MusicsViewController.swift */,
 				F5992F1D29A3D631004C9FAE /* PodcastsViewController.swift */,
 				F5992F1F29A3D645004C9FAE /* AppsViewController.swift */,
@@ -174,6 +177,7 @@
 				F5992F2629A3D6C9004C9FAE /* AudiobooksViewController.swift in Sources */,
 				F5992F2229A3D698004C9FAE /* MusicsViewController.swift in Sources */,
 				F52BF9D129A3D37A00B59AC7 /* AppDelegate.swift in Sources */,
+				F5AAEA8529CB3EC100A7D18D /* ImageLoader.swift in Sources */,
 				F52BF9D329A3D37A00B59AC7 /* SceneDelegate.swift in Sources */,
 				F5992F2829A3DFA9004C9FAE /* DataModel.swift in Sources */,
 				F5992F1E29A3D631004C9FAE /* PodcastsViewController.swift in Sources */,

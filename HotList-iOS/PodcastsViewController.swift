@@ -31,6 +31,15 @@ class PodcastsViewController: UIViewController{
         
         
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !data.isEmpty{
+            return
+        }
+        
         dataLoader.loadData(
             mediaType: "podcasts/top",
             type: PodcastType[0],
@@ -40,11 +49,16 @@ class PodcastsViewController: UIViewController{
             
         }
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        dataLoader.cancelRequest()
+        super.viewDidDisappear(animated)
+    }
     
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
         dataLoader.isLoading = true
         tableView.reloadData()
         
+        dataLoader.cancelRequest()
         dataLoader.loadData(
             mediaType: "podcasts/top",
             type: PodcastType[sender.selectedSegmentIndex],

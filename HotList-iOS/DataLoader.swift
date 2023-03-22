@@ -10,6 +10,7 @@ import UIKit
 class DataLoader{
     var apiData: DataModel?
     var isLoading = true
+    var dataTask: URLSessionDataTask?
     
     func getUrl(for mediaType: String, and type: String) -> URL?{
         return URL(string: "https://rss.applemarketingtools.com/api/v2/us/\(mediaType)/10/\(type).json"
@@ -21,7 +22,7 @@ class DataLoader{
         let url = getUrl(for: mediaType, and: type)
         
         let session = URLSession.shared
-        let task = session.dataTask(with: url!) { data, response, error in
+        dataTask = session.dataTask(with: url!) { data, response, error in
             if let error = error{
                 print("Error - \(error.localizedDescription)")
             }
@@ -37,8 +38,7 @@ class DataLoader{
                 }
             }
         }
-        task.resume()
-        
+        dataTask?.resume()
     }
     
     func decodeData(from data: Data?) -> DataModel?{
@@ -68,33 +68,9 @@ class DataLoader{
         
         return cell
     }
-}
-
-extension UIImageView{
-    func loadImage(from urlString: String){
-        let url = URL(string: urlString)
-        let session = URLSession.shared
-        
-        let downloadTask = session.downloadTask(with: url!) { url, response, error in
-            if let error = error{
-                print(error.localizedDescription)
-            }
-            else if let response = response as? HTTPURLResponse, response.statusCode != 200{
-                print("\(response.statusCode) - \(response.description)")
-            }
-            else if let url = url{
-                do{
-                    let data = try Data(contentsOf: url)
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        self.image = image
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-        self.image = nil
-        downloadTask.resume()
+    
+    func cancelRequest(){
+        dataTask?.cancel()
     }
 }
+

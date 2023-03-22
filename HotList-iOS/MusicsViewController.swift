@@ -16,7 +16,6 @@ class MusicsViewController: UIViewController{
     var dataLoader = DataLoader()
     var MusicType = ["albums", "music-videos", "playlists", "songs"]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +30,16 @@ class MusicsViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !data.isEmpty{
+            return
+        }
+        
         dataLoader.loadData(
             mediaType: "music/most-played",
             type: MusicType[0],
@@ -41,10 +50,16 @@ class MusicsViewController: UIViewController{
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        dataLoader.cancelRequest()
+        super.viewDidDisappear(animated)
+    }
+    
     @IBAction func segmentedControlClicked(_ sender: UISegmentedControl) {
         dataLoader.isLoading = true
         tableView.reloadData()
         
+        dataLoader.cancelRequest()
         dataLoader.loadData(
             mediaType: "music/most-played",
             type: MusicType[sender.selectedSegmentIndex],

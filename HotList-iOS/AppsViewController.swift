@@ -26,6 +26,16 @@ class AppsViewController: UIViewController{
         let loadingCell = UINib(nibName: "LoadingCell", bundle: nil)
         tableView.register(loadingCell, forCellReuseIdentifier: "LoadingCell")
         
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !data.isEmpty{
+            return
+        }
+        
         dataLoader.loadData(
             mediaType: "apps/top-free",
             type: "apps",
@@ -35,7 +45,13 @@ class AppsViewController: UIViewController{
             
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        dataLoader.cancelRequest()
+        super.viewDidDisappear(animated)
+    }
 }
+
 
 extension AppsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
