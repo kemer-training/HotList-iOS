@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImageView{
-    func loadImage(from urlString: String){
+    func loadImage(from urlString: String) -> URLSessionDownloadTask?{
         let url = URL(string: urlString)
         let session = URLSession.shared
         
@@ -33,5 +33,6 @@ extension UIImageView{
         }
         self.image = nil
         downloadTask.resume()
+        return downloadTask
     }
 }

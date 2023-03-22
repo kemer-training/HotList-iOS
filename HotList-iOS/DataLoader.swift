@@ -11,6 +11,7 @@ class DataLoader{
     var apiData: DataModel?
     var isLoading = true
     var dataTask: URLSessionDataTask?
+    var downloadTask: URLSessionDownloadTask?
     
     func getUrl(for mediaType: String, and type: String) -> URL?{
         return URL(string: "https://rss.applemarketingtools.com/api/v2/us/\(mediaType)/10/\(type).json"
@@ -64,13 +65,14 @@ class DataLoader{
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotListCell") as! HotListTableViewCell
         cell.name.text = data.name
         cell.artistName.text = data.artistName
-        cell.artworkView.loadImage(from: data.artworkUrl100!)
+        downloadTask = cell.artworkView.loadImage(from: data.artworkUrl100!)
         
         return cell
     }
     
     func cancelRequest(){
         dataTask?.cancel()
+        downloadTask?.cancel()
     }
 }
 
