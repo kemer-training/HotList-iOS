@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController{
     
+    var cellData: Result?
+    
     @IBOutlet weak var artworkView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
@@ -20,6 +22,14 @@ class DetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let cellData = cellData{
+            artworkView.loadImage(from: cellData.artworkUrl100!)
+            artworkView.layer.cornerRadius = 125
+            nameLabel.text = cellData.name
+            artistNameLabel.text = cellData.artistName
+        }
+
     }
+    
     
 }

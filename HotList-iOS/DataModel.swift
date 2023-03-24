@@ -19,4 +19,5 @@ class Result: Codable{
     var name: String?
     var artistName: String?
     var artworkUrl100: String?
+//    var releaseDate: String?
 }

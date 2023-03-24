@@ -82,4 +82,12 @@ extension PodcastsViewController: UITableViewDelegate, UITableViewDataSource{
         
         return dataLoader.displayData(data[indexPath.row], on: tableView)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        vc.cellData = data[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }
