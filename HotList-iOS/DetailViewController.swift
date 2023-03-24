@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController{
     
     var cellData: Result?
+    var downloadTask: URLSessionDownloadTask?
     
     @IBOutlet weak var artworkView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -23,12 +24,17 @@ class DetailViewController: UIViewController{
         super.viewDidLoad()
         
         if let cellData = cellData{
-            artworkView.loadImage(from: cellData.artworkUrl100!)
+            downloadTask = artworkView.loadImage(from: cellData.artworkUrl100!)
             artworkView.layer.cornerRadius = 125
             nameLabel.text = cellData.name
             artistNameLabel.text = cellData.artistName
         }
+        
+    }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        downloadTask?.cancel()
+        super.viewDidDisappear(animated)
     }
     
     
