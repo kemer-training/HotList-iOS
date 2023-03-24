@@ -14,6 +14,7 @@
 		F52BF9DD29A3D37C00B59AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52BF9DB29A3D37C00B59AC7 /* LaunchScreen.storyboard */; };
 		F531F97E29B254B800D45F17 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F531F97D29B254B800D45F17 /* LoadingCell.xib */; };
 		F531F98429B2574F00D45F17 /* HotListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F531F98329B2574F00D45F17 /* HotListTableViewCell.swift */; };
+		F538386929CDDE7500718015 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538386829CDDE7500718015 /* DetailViewController.swift */; };
 		F549459129B62E010091F94A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F549459029B62E010091F94A /* DataLoader.swift */; };
 		F551240E29B2380200EFDE38 /* HotListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F551240D29B2380200EFDE38 /* HotListCell.xib */; };
 		F5992F1E29A3D631004C9FAE /* PodcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5992F1D29A3D631004C9FAE /* PodcastsViewController.swift */; };
@@ -35,6 +36,7 @@
 		F52BF9DE29A3D37C00B59AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F531F97D29B254B800D45F17 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		F531F98329B2574F00D45F17 /* HotListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotListTableViewCell.swift; sourceTree = "<group>"; };
+		F538386829CDDE7500718015 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F549459029B62E010091F94A /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		F551240D29B2380200EFDE38 /* HotListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotListCell.xib; sourceTree = "<group>"; };
 		F587749C29BB11790000C26E /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				F531F97D29B254B800D45F17 /* LoadingCell.xib */,
 				F587749C29BB11790000C26E /* NothingFoundCell.xib */,
 				F52BF9D629A3D37A00B59AC7 /* Main.storyboard */,
+				F538386829CDDE7500718015 /* DetailViewController.swift */,
 				F52BF9DB29A3D37C00B59AC7 /* LaunchScreen.storyboard */,
 				F52BF9D929A3D37C00B59AC7 /* Assets.xcassets */,
 				F52BF9DE29A3D37C00B59AC7 /* Info.plist */,
@@ -175,6 +178,7 @@
 				F5992F2029A3D645004C9FAE /* AppsViewController.swift in Sources */,
 				F549459129B62E010091F94A /* DataLoader.swift in Sources */,
 				F5992F2629A3D6C9004C9FAE /* AudiobooksViewController.swift in Sources */,
+				F538386929CDDE7500718015 /* DetailViewController.swift in Sources */,
 				F5992F2229A3D698004C9FAE /* MusicsViewController.swift in Sources */,
 				F52BF9D129A3D37A00B59AC7 /* AppDelegate.swift in Sources */,
 				F5AAEA8529CB3EC100A7D18D /* ImageLoader.swift in Sources */,
