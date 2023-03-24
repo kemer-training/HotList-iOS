@@ -44,8 +44,8 @@ class AudiobooksViewController: UIViewController{
         }
         
         dataLoader.loadData(
-            mediaType: "books/top-free",
-            type: "books",
+            mediaType: "audio-books/top",
+            type: "audio-books",
             on: tableView
         ){
             self.data = self.dataLoader.apiData?.feed?.results ?? []
