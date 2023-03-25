@@ -41,6 +41,7 @@ class DetailViewController: UIViewController{
 
     override func viewDidDisappear(_ animated: Bool) {
         downloadTask?.cancel()
+        navigationController?.popViewController(animated: true)
         super.viewDidDisappear(animated)
     }
     
