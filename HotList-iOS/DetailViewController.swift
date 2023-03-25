@@ -22,8 +22,10 @@ class DetailViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.prompt = ""
         
         if let cellData = cellData{
+            navigationItem.title = formatKind(cellData.kind!.rawValue)
             downloadTask = artworkView.loadImage(from: cellData.artworkUrl100!)
             artworkView.layer.cornerRadius = 125
             nameLabel.text = cellData.name
@@ -37,5 +39,7 @@ class DetailViewController: UIViewController{
         super.viewDidDisappear(animated)
     }
     
-    
+    func formatKind(_ kind: String) -> String{
+        return "Top \(kind.replacingOccurrences(of: "-", with: " ").capitalized)"
+    }
 }
