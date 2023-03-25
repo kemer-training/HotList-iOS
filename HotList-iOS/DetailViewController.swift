@@ -25,11 +25,16 @@ class DetailViewController: UIViewController{
         navigationItem.prompt = ""
         
         if let cellData = cellData{
-            navigationItem.title = formatKind(cellData.kind!.rawValue)
+            navigationItem.title = "Top " + formatKind(cellData.kind!)
+            
             downloadTask = artworkView.loadImage(from: cellData.artworkUrl100!)
             artworkView.layer.cornerRadius = 125
             nameLabel.text = cellData.name
             artistNameLabel.text = cellData.artistName
+            kindLabel.text = formatKind(cellData.kind!)
+            genreLabel.text = formatGenre(cellData.genres!)
+            releaseDateLabel.text = cellData.releaseDate ?? "N/A"
+            ratingLabel.text = cellData.contentAdvisoryRating ?? "N/A"
         }
         
     }
@@ -39,7 +44,16 @@ class DetailViewController: UIViewController{
         super.viewDidDisappear(animated)
     }
     
-    func formatKind(_ kind: String) -> String{
-        return "Top \(kind.replacingOccurrences(of: "-", with: " ").capitalized)"
+    func formatKind(_ kind: Kind) -> String{
+        return "\(kind.rawValue.replacingOccurrences(of: "-", with: " ").capitalized)"
+    }
+    
+    func formatGenre(_ genres: [Genre]) -> String {
+        if genres.isEmpty { return "N/A"}
+        var genreStr: [String] = []
+        for genre in genres{
+            genreStr.append(genre.name!)
+        }
+        return genreStr.joined(separator: "/")
     }
 }
